@@ -1,12 +1,13 @@
-from homeworks.les_1.utils import any_key, request_int, request_bool, get_with_padding
+from homeworks.les_1.utils import any_key, request_int, request_bool
 
 print('3. Узнайте у пользователя число n. Найдите сумму чисел n + nn + nnn.')
 print('Например, пользователь ввёл число 3. Считаем 3 + 33 + 333 = 369.\n')
 
 done = False
 
+any_key()
+
 while not done:
-    any_key()
     user_number = request_int('Give me your number >>> ')
     equation_str = ''
     equation_total = 0

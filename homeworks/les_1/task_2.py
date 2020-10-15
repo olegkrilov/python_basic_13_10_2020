@@ -7,8 +7,9 @@ print('форматирование строк.\n')
 
 done = False
 
+any_key()
+
 while not done:
-    any_key()
 
     time_in_seconds = request_int('Input time in seconds >>> ', 'Integers! We need INTEGERS!!!')
 
