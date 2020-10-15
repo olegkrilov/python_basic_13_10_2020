@@ -1,10 +1,10 @@
 import random
 import string
+from homeworks.les_1.utils import any_key, request_int, request_greater_int
 
-
-def any_key(custom_str='start'):
-    input(f'press any key to {custom_str}\n')
-
+print('1. Поработайте с переменными, создайте несколько, выведите на экран,')
+print('запросите у пользователя несколько чисел и строк и')
+print('сохраните в переменные, выведите на экран.\n')
 
 """
 STRINGS
@@ -46,27 +46,28 @@ print('Program will generate 10 numbers in user selected range\n\n')
 number_of_steps = 10
 numbers_range = [0, 0]
 
-while not numbers_range[0]:
-    try:
-        custom_min_val = int(input('Input FROM value >>>'))
-        numbers_range[0] += custom_min_val
+numbers_range[0] = request_int('Input FROM value >>> ')
+numbers_range[1] = request_greater_int(numbers_range[0], f'Input TO value (greater then {numbers_range[0]}) >>> ')
+# try:
+#     custom_min_val += int(input('Input FROM value >>>'))
+#     # numbers_range[0] += custom_min_val
+#
+# except ValueError as err:
+#     print('Should be a number!')
 
-    except ValueError as err:
-        print('Should be a number!')
-
-
-while not numbers_range[1]:
-    try:
-        custom_max_val = int(input(f'Input TO value (should be greater then {numbers_range[0]})>>>'))
-
-        if custom_max_val < numbers_range[0]:
-            print(f'Should be greater then {numbers_range[0]}')
-
-        else:
-            numbers_range[1] += custom_max_val
-
-    except ValueError as err:
-        print('Should be a number!')
+#
+# while not numbers_range[1]:
+#     try:
+#         custom_max_val = int(input(f'Input TO value (should be greater then {numbers_range[0]})>>>'))
+#
+#         if custom_max_val < numbers_range[0]:
+#             print(f'Should be greater then {numbers_range[0]}')
+#
+#         else:
+#             numbers_range[1] += custom_max_val
+#
+#     except ValueError as err:
+#         print('Should be a number!')
 
 
 min_val = 0
