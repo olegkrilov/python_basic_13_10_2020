@@ -1,7 +1,32 @@
-from homeworks.les_1.utils import any_key, request_int, request_bool
-
 print('3. Узнайте у пользователя число n. Найдите сумму чисел n + nn + nnn.')
 print('Например, пользователь ввёл число 3. Считаем 3 + 33 + 333 = 369.\n')
+
+
+def any_key(custom_str='start'):
+    input(f'press any key to {custom_str}\n')
+
+
+def request_int(message='', error_message='Should be a number!'):
+
+    try:
+        return int(input(message))
+
+    except ValueError as err:
+        print(error_message or err)
+        return request_int(message)
+
+
+def request_bool(message='', error_message='Should be Y or N\n'):
+    user_input = input(message).lower()
+
+    if user_input == 'y':
+        return True
+    elif user_input == 'n':
+        return False
+    else:
+        print(error_message)
+        return request_bool(message, error_message)
+
 
 done = False
 

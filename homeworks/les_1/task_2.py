@@ -1,14 +1,41 @@
-from homeworks.les_1.utils import any_key, request_int, request_bool, get_with_padding
-
 print('Task #2')
 print('2. Пользователь вводит время в секундах. Переведите время в часы,')
 print('минуты и секунды и выведите в формате чч:мм:сс. Используйте')
 print('форматирование строк.\n')
 
-done = False
+
+def any_key(custom_str='start'):
+    input(f'press any key to {custom_str}\n')
+
+
+def request_int(message='', error_message='Should be a number!'):
+
+    try:
+        return int(input(message))
+
+    except ValueError as err:
+        print(error_message or err)
+        return request_int(message)
+
+
+def request_bool(message='', error_message='Should be Y or N\n'):
+    user_input = input(message).lower()
+
+    if user_input == 'y':
+        return True
+    elif user_input == 'n':
+        return False
+    else:
+        print(error_message)
+        return request_bool(message, error_message)
+
+
+def get_with_padding(some_val, padding_symbol='0', length=2):
+    return str(some_val).rjust(length, padding_symbol)
+
 
 any_key()
-
+done = False
 while not done:
 
     time_in_seconds = request_int('Input time in seconds >>> ', 'Integers! We need INTEGERS!!!')
