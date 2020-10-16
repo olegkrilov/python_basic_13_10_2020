@@ -33,16 +33,6 @@ def request_bool(message='', error_message='Should be Y or N\n'):
         return request_bool(message, error_message)
 
 
-def request_greater_int(threshold=0, message='', error_message='Should be a number!'):
-    numb = request_int(message, error_message)
-
-    if numb < threshold:
-        print(f'Value should be greater then {threshold}')
-        return request_greater_int(threshold, message, error_message)
-    else:
-        return numb
-
-
 def get_with_padding(some_val, padding_symbol='0', length=2):
     return str(some_val).rjust(length, padding_symbol)
 
