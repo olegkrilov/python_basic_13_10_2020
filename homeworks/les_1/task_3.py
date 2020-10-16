@@ -50,6 +50,7 @@ while not done:
             equation_str += ' + '
 
     print(equation_str, equation_total, sep=' = ')
+    print('\n')
 
     if request_bool('Do you want to repeat? >>> '):
         done = False

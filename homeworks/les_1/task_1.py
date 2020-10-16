@@ -20,18 +20,6 @@ def request_int(message='', error_message='Should be a number!'):
         return request_int(message)
 
 
-def request_bool(message='', error_message='Should be Y or N\n'):
-    user_input = input(message).lower()
-
-    if user_input == 'y':
-        return True
-    elif user_input == 'n':
-        return False
-    else:
-        print(error_message)
-        return request_bool(message, error_message)
-
-
 def request_greater_int(threshold=0, message='', error_message='Should be a number!'):
     numb = request_int(message, error_message)
 
