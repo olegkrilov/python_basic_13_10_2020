@@ -25,7 +25,7 @@ def get_random_string(str_length=0):
     if not str_length:
         str_length = random.randint(3, 10)
 
-    return ''.join(random.choice(string.ascii_letters) for i in range(str_length))
+    return ''.join(random.choice(string.ascii_letters) for _i in range(str_length))
 
 
 def get_random_number():
