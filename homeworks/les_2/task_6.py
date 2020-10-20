@@ -9,10 +9,6 @@ print('Структуру нужно сформировать программн
 database = []
 
 
-def generate_datum():
-    datum = {}
-
-
 def select_from(items, message='Select from ', error_message='ERROR: Unknown command!\n'):
     item = str(input(message)).lower()
 
