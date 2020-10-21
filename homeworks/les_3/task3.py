@@ -34,7 +34,7 @@ def main():
     while not done:
         args = tuple(
             sorted(
-                [request_number('Input ') for i in range(3)],
+                [request_number('Input some number') for i in range(3)],
                 reverse=True
             )
         )
