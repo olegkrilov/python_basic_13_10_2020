@@ -1,4 +1,3 @@
-from inspect import signature
 from random import randint
 
 """
@@ -57,7 +56,7 @@ def indexed_map(action, items, *args):
     def _do_action(_action, _val, _index, _args, _res):
         _res.append(action(_val, _index, *_args) if _args else action(_val, _index))
 
-    _args = args[0:len(signature(action).parameters.keys())] if len(args) else None
+    _args = args if args and len(args) else None
     _res = []
 
     return _do_iteration(
@@ -217,6 +216,62 @@ TESTS TESTS TESTS
 """
 
 """
+TEST FILTER
+Response should be
+[('3', 2), ('11', 3), ('asdasd', 4), ('123', 7), ('34', 10)]
+[(1, 0), (2, 1), (0, 5), (-2323, 6), (-1, 8), (4, 9)]
+[(-2323, 6), (-1, 8)]
+"""
+print('\nTesting FILTER:')
+test_items = [1, 2, '3', '11', 'asdasd', 0, -2323, '123', -1, 4, '34']
+for _lambda in [
+    lambda val, index: type(val) == str,  # Filter strings
+    lambda val, index: type(val) == int,  # Filter integers
+    lambda val, index: type(val) == int and val < 0,  # Filter integers < 0
+]:
+    print(indexed_filter(_lambda, test_items))
+
+
+"""
+TEST FILTER
+Response should be
+
+Item#0 has value asd
+Item#1 has value zxczc
+Item#2 has value 123
+Item#3 has value 123sdfasf
+Item#4 has value 35234234
+Item#5 has value 123.4343
+
+Item#0 has value "asd <<class 'str'>>" and we can multiply this string: asdasdasdasdasd
+Item#1 has value "abcde <<class 'str'>>" and we can reverse this string: edcba
+Item#2 has value "123 <<class 'int'>>" and we can turn integer to float: 123.0
+Item#3 has value "123sdfasf <<class 'str'>>" and we can divide digits from chars: (123, 'sdfasf')
+Item#4 has value "35234234 <<class 'str'>>" and we can turn string to integer: 35234234
+Item#5 has value "123.4343 <<class 'float'>>" and we can divide integer part from fraction: (123.0, 0.43429999999999325)
+"""
+print('\nTesting MAP (simple)')
+indexed_map(
+    lambda val, index: print(f'Item#{index} has value {val}'),
+    ['asd', 'zxczc', 123, '123sdfasf', '35234234', 123.4343]
+)
+
+print('\nTesting MAP (with multiple args)')
+indexed_map(
+    lambda val, index, *args: print(f'Item#{index} has value "{val} {type(val)}" and we can {args[index][0]}: {args[index][1](val)}'),
+    ['asd', 'abcde', 123, '123sdfasf', '35234234', 123.4343],
+
+    # additional args
+    ('multiply this string', lambda _str: _str * 5),
+    ('reverse this string', lambda _str: _str[::-1]),
+    ('turn integer to float', lambda _int: float(_int)),
+    ('divide digits from chars', lambda _str: (int(_str[:3]), _str[3:])),
+    ('turn string to integer', lambda _str: int(_str)),
+    ('divide integer part from fraction', lambda _val: custom_divmod(_val, 1))
+)
+
+
+"""
 TEST ZIP
 Response should be
 (0, 'a', 0, 4, 'z') 0
@@ -249,7 +304,7 @@ Response should be
 """
 print('\nTesting SORTED:')
 print(custom_sorted([123123, 123123, 45634434235, 12, 3, -2334, .345345, -123123123, 0]))
-print(custom_sorted([123123, 123123, 45634434235, 12, 3, -2334, .345345, -123123123, 0], True))
+print(custom_sorted([123123, 123123, 45634434235, 12, 3, -2334, .345345, -123123123, 0], reverse=True))
 
 
 """
