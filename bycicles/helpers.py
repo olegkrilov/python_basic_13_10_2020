@@ -6,11 +6,11 @@ from random import (
 )
 
 
-def as_function (obj, *args):
+def as_function(obj, *args):
     return obj(*args) if callable(obj) else obj
 
 
-def show_data(data, label):
+def show_data(data, label=''):
     length = len(data)
     last_index = length - 1
     msg = '['
