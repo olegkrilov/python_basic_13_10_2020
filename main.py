@@ -13,7 +13,7 @@ def select_task(tasks_list, break_key=BREAK_KEY):
     while not done:
 
         list_of_keys = [break_key]
-        msg = f'\nSelect task:\n' + ('-' * 42)
+        msg = f'\nSelect task:\n' + ('-' * 42) + '\n'
 
         for index, key in enumerate(tasks_list):
             list_of_keys.append(f'{index + 1}')

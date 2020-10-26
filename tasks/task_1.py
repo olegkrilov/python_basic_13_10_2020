@@ -4,17 +4,12 @@ from time import (
 from random import (
     choice,
     randint,
-    uniform,
-    getrandbits
+    uniform
 )
 from bycicles.input_requests import (
     request_boolean,
     request_number,
     request_from_list
-)
-
-from bycicles.helpers import (
-    as_function
 )
 
 
