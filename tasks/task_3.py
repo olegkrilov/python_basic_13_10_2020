@@ -16,7 +16,7 @@ def main():
 
     show_task()
     while not done:
-        show_data([val for val in range(20, 240) if not (val % 20) or not(val % 21)], 'Range = [20, 240]')
+        show_data([val for val in range(20, 240) if not (val % 20) or not (val % 21)], 'Range = [20, 240]')
 
         done = not request_boolean('\nRepeat')
 
