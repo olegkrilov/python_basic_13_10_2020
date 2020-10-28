@@ -17,6 +17,11 @@ def get_file_path(file):
     return os.path.realpath(file.name)
 
 
+def print_link_to_file(file):
+    path_to_file = get_file_path(file).replace("\\", "//")
+    print(f'file:///{path_to_file}')
+
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 

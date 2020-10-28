@@ -4,7 +4,8 @@ from bycicles.input_requests import (
 
 from bycicles.helpers import (
     clear_screen,
-    get_file_path
+    get_file_path,
+    print_link_to_file
 )
 
 TARGET_FILE = 'task_1.txt'
@@ -43,14 +44,12 @@ def main():
     show_task()
     while not done:
         with open(f'files/{TARGET_FILE}', 'w', encoding='utf-8') as file:
-            print(get_file_path(file))
             file.write(user_input())
             file.close()
 
         with open(f'files/{TARGET_FILE}', 'r', encoding='utf-8') as file:
-            path_to_file = get_file_path(file).replace("\\", "//")
             print(f'\nHere is the link to the file: {TARGET_FILE}')
-            print(f'file:///{path_to_file}')
+            print_link_to_file(file)
             file.close()
 
         done = not request_boolean('\nRepeat ?')
