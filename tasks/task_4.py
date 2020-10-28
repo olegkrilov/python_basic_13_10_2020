@@ -31,10 +31,11 @@ def main():
     done = False
     translate = Translator().translate
 
-    clear_screen()
-    show_task()
     while not done:
         data = []
+
+        clear_screen()
+        show_task()
 
         with open(f'files/{SOURCE_FILE}', 'r', encoding='utf-8') as file:
             data += [

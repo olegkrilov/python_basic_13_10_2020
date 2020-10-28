@@ -41,8 +41,10 @@ def user_input(_str=''):
 def main():
     done = False
 
-    show_task()
     while not done:
+        clear_screen()
+        show_task()
+
         with open(f'files/{TARGET_FILE}', 'w', encoding='utf-8') as file:
             file.write(user_input())
             file.close()

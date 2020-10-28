@@ -20,8 +20,10 @@ def show_task():
 def main():
     done = False
 
-    show_task()
     while not done:
+        clear_screen()
+        show_task()
+
         with open(f'files/{TARGET_FILE}', 'r', encoding='utf-8') as file:
             for ind, __str in enumerate([_str.strip() for _str in file.read().split(sep='\n') if len(_str)]):
                 print(f'\n{ind}: \n', __str, '\n', ('-' * 80))

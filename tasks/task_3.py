@@ -102,9 +102,10 @@ def show_users_data(data):
 def main():
     done = False
 
-    clear_screen()
-    show_task()
     while not done:
+        clear_screen()
+        show_task()
+
         with open(f'files/{TARGET_FILE}', 'r', encoding='utf-8') as file:
             data = get_users_data([_str for _str in file.read().split('\n')])
             show_users_data(data)
