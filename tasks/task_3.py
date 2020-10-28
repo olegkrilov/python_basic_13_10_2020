@@ -1,7 +1,7 @@
-from random import (
-    choice,
-    randint
-)
+# from random import (
+#     choice,
+#     randint
+# )
 
 from bycicles.input_requests import (
     request_boolean
