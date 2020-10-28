@@ -5,6 +5,10 @@ from bycicles.input_requests import (
     request_from_list
 )
 
+from bycicles.helpers import (
+    clear_screen
+)
+
 BREAK_KEY = 'q'
 
 
@@ -46,7 +50,9 @@ def main():
         tasks_list[task] = import_module(f'tasks.{task}')
 
     while not done:
+        clear_screen()
         done = select_task(tasks_list)
+
     else:
         print('Bye!')
 
