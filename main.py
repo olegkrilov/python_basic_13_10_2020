@@ -35,6 +35,8 @@ def select_task(tasks_list, break_key=BREAK_KEY):
             except KeyError as err:
                 print(err)
 
+        return done
+
 
 def main():
     done = False
@@ -44,8 +46,7 @@ def main():
         tasks_list[task] = import_module(f'tasks.{task}')
 
     while not done:
-        select_task(tasks_list)
-        done = not request_boolean('Do you want to continue ? ')
+        done = select_task(tasks_list)
     else:
         print('Bye!')
 
