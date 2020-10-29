@@ -1,0 +1,26 @@
+{
+  "Algebra": {
+    "Lecture": 37,
+    "Seminar": 13
+  },
+  "Physics": {
+    "Lecture": 20,
+    "Seminar": 16,
+    "Workshop": 22
+  },
+  "Chemistry": {
+    "Lecture": 28,
+    "Workshop": 22
+  },
+  "Geometry": {
+    "Lecture": 30,
+    "Seminar": 35
+  },
+  "Medieval Poetry": {
+    "Lecture": 23
+  },
+  "History": {
+    "Lecture": 19,
+    "Seminar": 33
+  }
+}
