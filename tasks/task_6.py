@@ -109,9 +109,6 @@ def main():
                 _file.write(json.dumps(content))
                 print(f'\n\nLink to file: {_file.name}')
                 print_link_to_file(_file)
-                _file.close()
-
-            file.close()
 
         done = not request_boolean('\nRepeat ?')
 
