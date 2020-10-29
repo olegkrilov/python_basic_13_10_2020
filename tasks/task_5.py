@@ -1,4 +1,4 @@
-from  functools import (
+from functools import (
     reduce
 )
 
@@ -47,7 +47,6 @@ def main():
 
         with open(f'files/{file_name}', 'w', encoding='utf-8') as file:
             file.write(_generate_data())
-            file.close()
 
         with open(f'files/{file_name}', 'r', encoding='utf-8') as file:
             values = [int(val) for val in file.read().split(SPACE_KEY)]
@@ -56,7 +55,6 @@ def main():
             print(f'\nTotal Sum = {reduce(lambda val, agg: agg + val, values)}')
             print(f'\nLink to file: {file_name}')
             print_link_to_file(file)
-            file.close()
 
         done = not request_boolean('\n\nRepeat ?')
 

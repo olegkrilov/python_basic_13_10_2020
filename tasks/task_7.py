@@ -1,7 +1,3 @@
-# from random import (
-#     choice,
-#     randint
-# )
 import json
 
 from bycicles.input_requests import (
@@ -29,24 +25,6 @@ def show_task():
     print('Далее реализовать список. Он должен содержать словарь с фирмами и их прибылями, ')
     print('а также словарь со средней прибылью. Если фирма получила убытки, также добавить ее в словарь')
     print('(со значением убытков). Итоговый список сохранить в виде json-объекта в соответствующий файл.\n')
-
-
-# def _generate_data():
-#     data = ''
-#     org_names = ['Firm', 'Company', 'Corporation']
-#     org_types = ['Ltd', 'Join-Stock', 'Closed-Join-Stock']
-#
-#     _i = 10
-#     while _i:
-#         _i -= 1
-#         data += f'{choice(org_names)}_{10 - _i} '
-#         data += f'{choice(org_types)} '
-#         data += f'{randint(10 ** 5, 10 ** 6)} '
-#         data += f'{randint(10 ** 5, 10 ** 6)}'
-#         data += '\n' if _i else ''
-#
-#     with open(f'files/{SOURCE_FILE}.txt', 'w', encoding='utf-8') as file:
-#         file.write(data)
 
 
 def read_and_show_source_data(source):

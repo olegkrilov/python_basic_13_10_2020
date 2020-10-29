@@ -1,8 +1,3 @@
-# from random import (
-#     choice,
-#     randint
-# )
-
 from bycicles.input_requests import (
     request_boolean
 )
@@ -21,25 +16,6 @@ def show_task():
     print('Определить, кто из сотрудников имеет оклад менее 20 тыс., вывести фамилии этих сотрудников.')
     print('Выполнить подсчет средней величины дохода сотрудников.\n')
 
-
-# def _generate_data():
-#     data = ''
-#     random_first_names = ['Ivan', 'Stepan', 'Fedor', 'Petr', 'Denis']
-#     random_last_names = ['off', 'chuk', 'enko', 'in']
-#
-#     _i = 0
-#     while _i < 10:
-#         data += (choice(random_first_names) + ' '
-#                  + choice(random_first_names) + choice(random_last_names) + ' '
-#                  + str(randint(17, 25) * 1000)
-#                  + '\n')
-#         _i += 1
-#
-#     with open(f'files/{TARGET_FILE}', 'w', encoding='utf-8') as file:
-#         file.write(data)
-#         file.close()
-#
-#     print(data)
 
 def get_users_data(data):
     threshold = 2 * (10 ** 4)
@@ -109,7 +85,6 @@ def main():
         with open(f'files/{TARGET_FILE}', 'r', encoding='utf-8') as file:
             data = get_users_data([_str for _str in file.read().split('\n')])
             show_users_data(data)
-            file.close()
 
         done = not request_boolean('\nRepeat ?')
 

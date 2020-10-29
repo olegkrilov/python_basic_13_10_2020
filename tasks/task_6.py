@@ -4,10 +4,6 @@ from functools import (
     reduce
 )
 
-# from random import (
-#     randint
-# )
-
 from bycicles.input_requests import (
     request_boolean
 )
@@ -67,27 +63,6 @@ def show_data(data):
 
     print(grid_header)
     print(grid_body)
-
-
-# def _generate_data():
-#     subjects = {
-#         'Algebra': ['Lecture', 'Seminar'],
-#         'Physics': ['Lecture', 'Seminar', 'Workshop'],
-#         'Chemistry': ['Lecture', 'Workshop'],
-#         'Geometry': ['Lecture', 'Seminar'],
-#         'Medieval Poetry': ['Lecture'],
-#         'History': ['Lecture', 'Seminar']
-#     }
-#     data = {}
-#
-#     for key, value in subjects.items():
-#         data[key] = {}
-#         for lesson_type in subjects[key]:
-#             data[key][lesson_type] = randint(10, 40)
-#
-#     with open(f'files/{SOURCE_FILE}', 'w', encoding='utf-8') as file:
-#         file.write(json.dumps(data))
-#         file.close()
 
 
 def main():

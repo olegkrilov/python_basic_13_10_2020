@@ -46,8 +46,6 @@ def main():
             print(f'\nOriginal File: {SOURCE_FILE}')
             print_link_to_file(file)
 
-            file.close()
-
         with open(f'files/{TARGET_FILE}', 'w', encoding='utf-8') as file:
             content = ''
             for _str in data:
@@ -57,8 +55,6 @@ def main():
 
             print(f'\nTranslated File: {TARGET_FILE}')
             print_link_to_file(file)
-
-            file.close()
 
         done = not request_boolean('\nRepeat ?')
 

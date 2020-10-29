@@ -4,7 +4,6 @@ from bycicles.input_requests import (
 
 from bycicles.helpers import (
     clear_screen,
-    get_file_path,
     print_link_to_file
 )
 
@@ -47,12 +46,10 @@ def main():
 
         with open(f'files/{TARGET_FILE}', 'w', encoding='utf-8') as file:
             file.write(user_input())
-            file.close()
 
         with open(f'files/{TARGET_FILE}', 'r', encoding='utf-8') as file:
             print(f'\nHere is the link to the file: {TARGET_FILE}')
             print_link_to_file(file)
-            file.close()
 
         done = not request_boolean('\nRepeat ?')
 

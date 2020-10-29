@@ -3,8 +3,7 @@ from bycicles.input_requests import (
 )
 
 from bycicles.helpers import (
-    clear_screen,
-    get_file_path
+    clear_screen
 )
 
 TARGET_FILE = 'task_2.txt'
@@ -29,8 +28,6 @@ def main():
                 print(f'\n{ind}: \n', __str, '\n', ('-' * 80))
                 print('String size: ', len(__str))
                 print('Count of words: ', len(__str.split(SPACE_KEY)))
-
-            file.close()
 
         done = not request_boolean('\nRepeat ?')
 
