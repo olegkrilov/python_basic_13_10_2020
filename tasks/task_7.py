@@ -10,8 +10,8 @@ from bycicles.helpers import (
     print_link_to_file
 )
 
-SOURCE_FILE = 'task_6_source'
-TARGET_FILE = 'task_6_target'
+SOURCE_FILE = 'task_7_source'
+TARGET_FILE = 'task_7_target'
 NEW_LINE_KEY = '\n'
 SPACE_KEY = ' '
 
