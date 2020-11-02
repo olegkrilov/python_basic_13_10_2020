@@ -4,12 +4,14 @@ from common.utils import (
 )
 from tasks.TaskOne.TaskOne import TaskOne
 from tasks.TaskTwo.TaskTwo import TaskTwo
+from tasks.TaskThree.TaskThree import TaskThree
 
 
 def select_task():
     tasks = {
         '1': TaskOne,
         '2': TaskTwo,
+        '3': TaskThree,
         'q': None
     }
 
