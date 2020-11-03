@@ -6,6 +6,7 @@ from tasks.TaskOne.TaskOne import TaskOne
 from tasks.TaskTwo.TaskTwo import TaskTwo
 from tasks.TaskThree.TaskThree import TaskThree
 from tasks.TaskFour.TaskFour import TaskFour
+from tasks.TaskFive.TaskFive import TaskFive
 
 
 def select_task():
@@ -14,6 +15,7 @@ def select_task():
         '2': TaskTwo,
         '3': TaskThree,
         '4': TaskFour,
+        '5': TaskFive,
         'q': None
     }
 

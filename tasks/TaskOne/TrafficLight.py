@@ -1,6 +1,5 @@
 from time import sleep
 from itertools import cycle
-from threading import Thread
 from common.utils import clear_screen
 
 

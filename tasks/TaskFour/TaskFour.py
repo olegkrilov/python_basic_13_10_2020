@@ -5,8 +5,7 @@ from time import sleep
 from common.utils import (
     request_boolean,
     clear_screen,
-    request_from_list,
-    as_function
+    request_from_list
 )
 
 from tasks.AbstractTask import AbstractTask
