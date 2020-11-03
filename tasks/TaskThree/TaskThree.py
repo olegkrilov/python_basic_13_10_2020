@@ -62,15 +62,15 @@ class TaskThree(AbstractTask):
                     'value': lambda datum: self.__get_cell(datum['surname'], 15)
                 },
                 'position': {
-                    'label': self.__get_cell('Surname', 40),
+                    'label': self.__get_cell('Position', 40),
                     'value': lambda datum: self.__get_cell(datum['position'], 40)
                 },
                 'wage': {
-                    'label': self.__get_cell('Surname', 10, 'right'),
+                    'label': self.__get_cell('Wage', 10, 'right'),
                     'value': lambda datum: self.__get_cell(datum['wage'], 10, 'right', True)
                 },
                 'bonus': {
-                    'label': self.__get_cell('Surname', 10, 'right'),
+                    'label': self.__get_cell('Bonus', 10, 'right'),
                     'value': lambda datum: self.__get_cell(datum['bonus'], 10, 'right', True)
                 }
             },
