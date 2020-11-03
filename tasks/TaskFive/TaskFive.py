@@ -23,7 +23,7 @@ class TaskFive(AbstractTask):
             'p': ('Pen', Pen),
             'c': ('Pencil', Pencil),
             'm': ('Marker', Marker),
-            'q': ('Quit', None)
+            'q': ('Quit', lambda: None)
         }
 
         print('Select Drawing Tool or [Q] to quit:')
