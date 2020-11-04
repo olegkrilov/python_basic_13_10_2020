@@ -81,10 +81,10 @@ class Matrix:
 
     def generate_data(self, x=None, y=None):
         if x is None:
-            x = randint(2, 5)
+            x = randint(1, 9)
 
         if y is None:
-            y = randint(2, 5)
+            y = randint(1, 9)
 
         self.__x = x
         self.__y = y

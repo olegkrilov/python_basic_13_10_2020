@@ -20,7 +20,7 @@ def select_task():
     for key, val in tasks.items():
         print(f'[{key.upper()}]:', f'Task#{key}' if val else 'Quit')
 
-    return tasks[request_from_list([key for key in tasks.keys()], ' ')]
+    return tasks[request_from_list([key for key in tasks.keys()], '\n')]
 
 
 def main():

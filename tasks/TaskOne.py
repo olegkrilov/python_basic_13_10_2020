@@ -53,6 +53,7 @@ class TaskOne(AbstractTask):
 
         if clear:
             clear_screen()
+            self.show_description()
 
         if message:
             print(message)
@@ -62,7 +63,7 @@ class TaskOne(AbstractTask):
         for key, val in tasks.items():
             print(f'[{key.upper()}]:', f'{val[0]}')
 
-        selected_task = tasks[request_from_list([key for key in tasks.keys()], ' ')]
+        selected_task = tasks[request_from_list([key for key in tasks.keys()], '\n')]
 
         if selected_task[1] is None:
             self.is_done = True
