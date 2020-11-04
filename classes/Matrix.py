@@ -26,29 +26,14 @@ class Matrix:
         _body = Matrix.get_as_string(self.__data)
         return _head + _body
 
-    def __getitem__(self, search_val):
-        if isinstance(search_val, tuple) or isinstance(search_val, list):
-            try:
-                x, y = search_val
-                return self.__data[y][x]
+    def __call__(self, x=0, y=0):
+        try:
+            return self.__data[y][x]
 
-            except IndexError:
-                return None
-
-        elif isinstance(search_val, dict):
-            try:
-                return self.__data[search_val['y']][search_val['x']]
-
-            except IndexError:
-                return None
-
-            except KeyError:
-                return None
-
-        else:
+        except IndexError:
             return None
 
-    def __add__(self, another_matrix):
+    def __iadd__(self, another_matrix):
         self.__x = max(self.__x, another_matrix.x)
         self.__y = max(self.__y, another_matrix.y)
         _data = []
@@ -58,14 +43,13 @@ class Matrix:
             row = []
             __i = 0
             while __i < self.__x:
-                _val = self[(__i, _i)] or 0
-                __val = self[(__i, _i)] or 0
-                row.append((self[(__i, _i)] or 0) + (another_matrix[(__i, _i)] or 0))
+                row.append((self(__i, _i) or 0) + (another_matrix(__i, _i) or 0))
                 __i += 1
             _data.append(row)
             _i += 1
 
         self.__data = _data
+        return self
 
     @property
     def size(self):

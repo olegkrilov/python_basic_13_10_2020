@@ -1,5 +1,3 @@
-from random import (randint)
-
 from common.AbstractTask import AbstractTask
 from common.utils import (
     request_boolean,
@@ -34,7 +32,7 @@ class TaskOne(AbstractTask):
         summarized_matrix = Matrix()
 
         for matrix in self.__matrices:
-            summarized_matrix + matrix
+            summarized_matrix += matrix
 
         clear_screen()
         print('Summarized Matrix')
